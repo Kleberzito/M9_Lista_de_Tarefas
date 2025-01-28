@@ -13,10 +13,6 @@ body {
     line-height: 1;
 }
 
-ol, ul {
-    list-style: none;
-}
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -45,14 +41,14 @@ input[type="text"] {
 }
 
 button[type="submit"] {
-    background-color: #c5c5c5;
+    background-color: #4CAF50;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    border: solid 1px #bebebe;
+    border: solid 1px #449c47;
     font-style: bold;
 }
 
@@ -78,3 +74,16 @@ button[type="submit"] {
     margin-bottom: 15px;
 }
 
+.hidden {
+    display: none;
+}
+
+#task-list li a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+}
