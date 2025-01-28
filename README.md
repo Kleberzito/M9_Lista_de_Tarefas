@@ -27,7 +27,7 @@ Esta aplicação web permite aos usuários adicionar e gerenciar uma lista de ta
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/Kleberzito/M9_Lista_de_Tarefas.git 
     ```
 
 2. Navegue até o diretório do projeto:
