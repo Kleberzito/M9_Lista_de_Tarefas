@@ -26,6 +26,10 @@ body {
     justify-content: center;
 }
 
+.hidden {
+    display: none;
+}
+
 h1 {
     font-size: 25px;
     text-align: center;
@@ -72,10 +76,6 @@ button[type="submit"] {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-}
-
-.hidden {
-    display: none;
 }
 
 #task-list li a{

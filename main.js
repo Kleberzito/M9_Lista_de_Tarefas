@@ -1,38 +1,38 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const taskForm = document.getElementById('task-form');
-    const taskInput = document.getElementById('task-input');
-    const taskListContainer = document.getElementById('task-list-container');
-    const taskList = document.getElementById('task-list');
+$(document).ready(function() {
+    const $taskForm = $('#task-form');
+    const $taskInput = $('#task-input');
+    const $taskListContainer = $('#task-list-container');
+    const $taskList = $('#task-list');
 
     function updateTaskListVisibility() {
-        if (taskList.children.length === 0) {
-            taskListContainer.classList.add('hidden');
+        if ($taskList.children().length === 0) {
+            $taskListContainer.removeClass('container');
+            $taskListContainer.addClass('hidden');
         } else {
-            taskListContainer.classList.remove('hidden');
+            $taskListContainer.removeClass('hidden');
+            $taskListContainer.addClass('container');
         }
     }
 
     updateTaskListVisibility();
 
-    taskForm.addEventListener('submit', function(event) {
+    $taskForm.on('submit', function(event) {
         event.preventDefault();
 
-        const task = taskInput.value.trim();
+        const task = $taskInput.val().trim();
 
         if (task !== '') {
-            const listItem = document.createElement('li');
-            const linkItem = document.createElement('a');
-            linkItem.href = '#';
-            linkItem.onclick = function() {                
-                listItem.classList.toggle('completed');
+            const $listItem = $('<li>');
+            const $linkItem = $('<a href="#">').text(task);
+            $linkItem.on('click', function() {
+                $(this).parent().toggleClass('completed');
                 return false;
-            };
-            linkItem.textContent = task;
-            listItem.appendChild(linkItem);
-            taskList.appendChild(listItem);
+            });
+            $listItem.append($linkItem);
+            $taskList.append($listItem);
 
-            updateTaskListVisibility();
-            taskInput.value = '';
+            updateTaskListVisibility();            
+            $taskInput.val('');
         }
     });
 });
